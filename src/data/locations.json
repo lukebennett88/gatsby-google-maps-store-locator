@@ -1,0 +1,80 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "name": "Be Healthy"
+      },
+      "geometry": {
+        "coordinates": [
+          145.214669,
+          -37.986562
+        ],
+        "type": "Point"
+      },
+      "id": "address.1225578242811542"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "name": "Drouin Health Barn"
+      },
+      "geometry": {
+        "coordinates": [
+          145.857804,
+          -38.136271
+        ],
+        "type": "Point"
+      },
+      "id": "address.1285720959624560"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "name": "Bills Health Food Shop"
+      },
+      "geometry": {
+        "coordinates": [
+          142.853082,
+          -37.150904
+        ],
+        "type": "Point"
+      },
+      "id": "address.1758397771162792"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "name": "Beauty Block"
+      },
+      "geometry": {
+        "coordinates": [
+          145.001729,
+          -37.905258
+        ],
+        "type": "Point"
+      },
+      "id": "address.7372042838508522"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "name": "Botaniko"
+      },
+      "geometry": {
+        "coordinates": [
+          145.089817,
+          -37.899998
+        ],
+        "type": "Point"
+      },
+      "id": "address.8909495727251556"
+    }
+  ],
+  "type": "FeatureCollection"
+}
