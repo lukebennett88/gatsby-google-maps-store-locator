@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import {
   withGoogleMap,
   withScriptjs,
@@ -6,6 +7,7 @@ import {
   Marker,
   InfoWindow,
 } from 'react-google-maps';
+
 import * as parkData from '../data/locations.json';
 import mapStyles from '../styles/map-styles';
 
@@ -38,7 +40,7 @@ function Map() {
       {parkData.features.map(park => (
         <Marker
           className="font-sans"
-          key={park.properties.PARK_ID}
+          key={park.id}
           position={{
             lat: park.geometry.coordinates[1],
             lng: park.geometry.coordinates[0],
@@ -46,10 +48,6 @@ function Map() {
           onClick={() => {
             setSelectedPark(park);
           }}
-          // icon={{
-          //   url: `/skateboarding.svg`,
-          //   scaledSize: new window.google.maps.Size(25, 25),
-          // }}
         />
       ))}
 
@@ -75,10 +73,20 @@ function Map() {
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
 export default function App() {
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          GOOGLE_API_KEY
+        }
+      }
+    }
+  `);
+  console.log(data.site.siteMetadata.GOOGLE_API_KEY);
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       <MapWrapped
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.GOOGLE_API_KEY}`}
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${data.site.siteMetadata.GOOGLE_API_KEY}`}
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `100%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
