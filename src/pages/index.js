@@ -39,7 +39,7 @@ function Map() {
       {parkData.features.map(park => (
         <Marker
           className="font-sans"
-          key={park.properties.PARK_ID}
+          key={park.id}
           position={{
             lat: park.geometry.coordinates[1],
             lng: park.geometry.coordinates[0],
@@ -47,10 +47,6 @@ function Map() {
           onClick={() => {
             setSelectedPark(park);
           }}
-          // icon={{
-          //   url: `/skateboarding.svg`,
-          //   scaledSize: new window.google.maps.Size(25, 25),
-          // }}
         />
       ))}
 
