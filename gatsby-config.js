@@ -9,7 +9,6 @@ module.exports = {
     description: `Gatsby starter styled with Tailwind.`,
     author: `@luke_bennett_`,
     siteUrl: `https://gatsby-starter-tailwindcss.netlify.com`,
-    GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,
   },
   plugins: [
     `gatsby-plugin-netlify`,
