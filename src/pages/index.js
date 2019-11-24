@@ -75,6 +75,7 @@ function Map() {
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
 export default function App() {
+  console.log(process.env.GOOGLE_API_KEY);
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       <MapWrapped
