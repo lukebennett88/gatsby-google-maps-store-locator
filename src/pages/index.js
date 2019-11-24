@@ -6,6 +6,7 @@ import {
   Marker,
   InfoWindow,
 } from 'react-google-maps';
+
 import * as parkData from '../data/locations.json';
 import mapStyles from '../styles/map-styles';
 
